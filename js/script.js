@@ -39,17 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
         input = document.querySelector('.adding__input'),
         dlt = document.querySelector('.delete');
 
-
     add.remove();
-
     genre.textContent = "ДРАМА";
 
     backgroundPromo.style.backgroundImage = "url('img/bg.jpg')";
+
     const sortArr = (arr) => {
         arr.sort();
     }
     sortArr(movieDB.movies);
-
 
     function createMoviesList(films, parent) {
         parent.innerHTML = "";
@@ -69,6 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (filmName.length == 21) {
                 filmName += "...";
             }
+            // another method
+            // if (filmName.length > 21) {
+            //     filmName = `${filmName.substring(0, 22)}...`;
+            // }
+
             movieDB.movies.push(filmName);
             console.log(movieDB.movies)
             sortArr(movieDB.movies);
